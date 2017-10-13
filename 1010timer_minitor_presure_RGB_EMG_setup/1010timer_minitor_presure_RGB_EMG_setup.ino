@@ -53,6 +53,7 @@ String data = apikey + "&field1=73";
 int mode = 2;
 String title_name[] = {"ID","Date","time","num","pressure","pisok","emg","emgisok","finalok"};
 String tests="";
+String modes = "";
 
 //**************************************************** setup*********************************************************************************************
 void setup() {
@@ -154,19 +155,23 @@ void setup() {
     myFile.close();
   }
 
-  ID = tmp_string[1].substring(1);
-  hold_time = tmp_string[9].toInt()*1000;
-  ssid = tmp_string[3].substring(1);
-  password = tmp_string[5].substring(1);
-  Serial.println("test");
-  Serial.println(ID);
-  Serial.println(password);
+  ID = tmp_string[0].substring(1);
+  hold_time = tmp_string[4].toInt()*1000;
+  ssid = tmp_string[1].substring(1);
+  password = tmp_string[2].substring(1);
+  //Serial.println("test");
+  //Serial.println(ssid);
+  //Serial.println(password);
   
-  delay(1000);
+  //delay(1000);
 
   //wifi
+  lcd.clear();//清除LCD畫面
+  lcd.setCursor(0, 0); //將游標移至第一行第一列
+  lcd.println("wifi connecting..");//wifi連線中
   reset();
   connectWifi();
+
   /*
   //*********************資料寫入 Start************************
   //file2 檔寫入
@@ -200,22 +205,32 @@ void loop() {
   while (!sd_set) {
     return;
   }
-
+  
   if(Serial.available()) {
-    mode = Serial.read()-48;
-    Serial.println(mode);
+    delay(100);
+    modes = "";
+    while(Serial.available()) {
+      char a = Serial.read();
+      modes += a;
+    }
+    Serial.println(modes);
+    if(modes=="1")
+      httppost();
+    else if(modes == "2")
+      test();
+    else if(modes == "3") {
+      if(SD.exists("data.txt"))
+        SD.remove("data.txt");
+    } else if(modes == "computer") {
+      info_read();
+    } else {
+      info_modify();
+    }
   }
   
-  if(mode==0)
+  if(modes=="0")
     mloop();
-  else if(mode==1)
-    httppost();
-  else if(mode == 2)
-    test();
-  else if(mode == 3) {
-    SD.remove("data.txt");
-    mode = 4;
-  }
+
 
 }
 
@@ -327,11 +342,20 @@ void mloop() {
 
   //*********************EMG  End************************
   //*********************資料寫入 Start************************
+  int checkfile = 0;
+  if(SD.exists("data.txt")) {
+    checkfile = 1;
+  }
   myFile = SD.open("data.txt", FILE_WRITE);       // 開啟檔案，一次僅能開啟一個檔案
   if (myFile)
   {
     //#ID,data time,num,pressure,pisok(1=ok;0=faile),emg,emgisok(1=ok;0=faile),finalok(1=ok;0=faile)
-    myFile.print(",{");
+    if(checkfile==1)
+      myFile.print(",{");
+    else {
+      myFile.print("{");
+      checkfile = 1;
+    }
     myFile.print(title_name[0]); myFile.print(":"); myFile.print(ID); myFile.print(","); //ID寫入
     myFile.print(title_name[1]); myFile.print(":"); myFile.print(rtc.getDateStr()); myFile.print(",");//寫入日期
     myFile.print(title_name[2]); myFile.print(":"); myFile.print(rtc.getTimeStr()); myFile.print(",");//寫入時間
@@ -381,10 +405,14 @@ void connectWifi() {
   Serial3.println(cmd);
   delay(4000);
   if(Serial3.find("OK")) {
+  lcd.setCursor(0, 1); //將游標移至第一行第一列
+  lcd.println("connected");//wifi連線成功
     Serial.println("Connected!");
   } else {
     connectWifi();
     Serial.println("Cannot connect to wifi"); 
+    lcd.setCursor(0, 1); //將游標移至第一行第一列
+    lcd.println("failed");//wifi連線失敗
   }
 }
 void httppost () {
@@ -443,6 +471,7 @@ void test() {
     myFile = SD.open("data.txt");       // 開啟檔案，一次僅能開啟一個檔案
     if (myFile)
     {
+      tests = "";
       while (myFile.available()) {
          testc = myFile.read();
          //Serial.write(testc);
@@ -452,10 +481,50 @@ void test() {
     }
 
     //String testarr[] = tests.split
-    tests = "{" + tests.substring(1) + "}";
+    tests = "{" + tests + "}";
     Serial.println(tests);
     myFile.close();
   }
   delay(3000);
+}
+
+void info_read() {
+  Serial.print("connected");
+  delay(1000);
+  char testc;
+  if (sd_set)
+  {
+    myFile = SD.open("info.txt");       // 開啟檔案，一次僅能開啟一個檔案
+    if (myFile)
+    {
+      tests = "";
+      while (myFile.available()) {
+         testc = myFile.read();
+         tests += testc;
+      }
+    }
+    tests = tests + "\r\n#end";
+    Serial.println(tests);
+    myFile.close();
+    lcd.clear();
+    lcd.setCursor(0, 0); //將游標移至第一行第一列
+    lcd.println("info read ok");//wifi連線成功
+  }
+}
+
+void info_modify() {
+
+  if(SD.exists("info.txt"))
+    SD.remove("info.txt");
+  
+  myFile = SD.open("info.txt", FILE_WRITE);       // 開啟檔案，一次僅能開啟一個檔案
+  if (myFile) {
+    myFile.print(modes);
+  }
+  myFile.close();
+
+  lcd.setCursor(0, 1); //將游標移至第一行第一列
+  lcd.println("info modify ok");//wifi連線成功
+  
 }
 
