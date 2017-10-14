@@ -1,0 +1,110 @@
+Added Component: Designator=p1(pin_8)
+Add component. Clean all parameters for all variants
+Added Component: Designator=p2(pin_8)
+Add component. Clean all parameters for all variants
+Added Component: Designator=p3(pin_8)
+Add component. Clean all parameters for all variants
+Added Component: Designator=p4(pin_8)
+Add component. Clean all parameters for all variants
+Added Component: Designator=p5(pin_8)
+Add component. Clean all parameters for all variants
+Added Component: Designator=p6(pin_8)
+Add component. Clean all parameters for all variants
+Added Component: Designator=p7(pin_18_2)
+Add component. Clean all parameters for all variants
+Added Component: Designator=p8(pin_6)
+Add component. Clean all parameters for all variants
+Added Component: Designator=p9(pin_6)
+Add component. Clean all parameters for all variants
+Added Component: Designator=p10(pin_4_2)
+Add component. Clean all parameters for all variants
+Added Component: Designator=p11(pin_4_2)
+Add component. Clean all parameters for all variants
+Added Component: Designator=p12(PIN_3)
+Add component. Clean all parameters for all variants
+Added Component: Designator=p13(pin_4_2)
+Add component. Clean all parameters for all variants
+Added Component: Designator=p14(PIN_3)
+Add component. Clean all parameters for all variants
+Added Component: Designator=p15(PIN_3)
+Add component. Clean all parameters for all variants
+Added Component: Designator=p16(PIN_3)
+Add component. Clean all parameters for all variants
+Added Component: Designator=R1(AXIAL-0.4)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageDescription"; Value = "Axial Device, Thru-Hole; 2 Leads; 0.4 in Pin Spacing"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageReference"; Value = "AXIAL-0.4"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "8-Jun-2000"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "10K"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=A0 Pin=p2-0
+Added Pin To Net: NetName=A0 Pin=p14-1
+Added Pin To Net: NetName=A0 Pin=R1-2
+Added Net: Name=A0
+Added Pin To Net: NetName=A6 Pin=p2-6
+Added Pin To Net: NetName=A6 Pin=p12-2
+Added Net: Name=A6
+Added Pin To Net: NetName=GND Pin=p1-5
+Added Pin To Net: NetName=GND Pin=p1-6
+Added Pin To Net: NetName=GND Pin=p8-5
+Added Pin To Net: NetName=GND Pin=p9-5
+Added Pin To Net: NetName=GND Pin=p10-0
+Added Pin To Net: NetName=GND Pin=p11-0
+Added Pin To Net: NetName=GND Pin=p12-1
+Added Pin To Net: NetName=GND Pin=p13-0
+Added Pin To Net: NetName=GND Pin=p15-1
+Added Pin To Net: NetName=GND Pin=p16-2
+Added Pin To Net: NetName=GND Pin=R1-1
+Added Net: Name=GND
+Added Pin To Net: NetName=N4 Pin=p5-3
+Added Pin To Net: NetName=N4 Pin=p10-2
+Added Net: Name=N4
+Added Pin To Net: NetName=N5 Pin=p5-2
+Added Pin To Net: NetName=N5 Pin=p10-1
+Added Net: Name=N5
+Added Pin To Net: NetName=N6 Pin=p5-1
+Added Pin To Net: NetName=N6 Pin=p10-3
+Added Net: Name=N6
+Added Pin To Net: NetName=n50 Pin=p7-1
+Added Pin To Net: NetName=n50 Pin=p9-3
+Added Net: Name=n50
+Added Pin To Net: NetName=n51 Pin=p7-19
+Added Pin To Net: NetName=n51 Pin=p9-2
+Added Net: Name=n51
+Added Pin To Net: NetName=n52 Pin=p7-0
+Added Pin To Net: NetName=n52 Pin=p9-1
+Added Net: Name=n52
+Added Pin To Net: NetName=n53 Pin=p7-18
+Added Pin To Net: NetName=n53 Pin=p9-0
+Added Net: Name=n53
+Added Pin To Net: NetName=RX3 Pin=p6-1
+Added Pin To Net: NetName=RX3 Pin=p13-4
+Added Net: Name=RX3
+Added Pin To Net: NetName=SCL Pin=p6-7
+Added Pin To Net: NetName=SCL Pin=p8-2
+Added Pin To Net: NetName=SCL Pin=p11-3
+Added Net: Name=SCL
+Added Pin To Net: NetName=SDA Pin=p6-6
+Added Pin To Net: NetName=SDA Pin=p8-3
+Added Pin To Net: NetName=SDA Pin=p11-2
+Added Net: Name=SDA
+Added Pin To Net: NetName=TX3 Pin=p6-0
+Added Pin To Net: NetName=TX3 Pin=p13-3
+Added Net: Name=TX3
+Added Pin To Net: NetName=V6V Pin=p16-0
+Added Net: Name=V6V
+Added Pin To Net: NetName=VCC Pin=p1-7
+Added Pin To Net: NetName=VCC Pin=p8-4
+Added Pin To Net: NetName=VCC Pin=p9-4
+Added Pin To Net: NetName=VCC Pin=p11-1
+Added Pin To Net: NetName=VCC Pin=p12-0
+Added Pin To Net: NetName=VCC Pin=p13-5
+Added Pin To Net: NetName=VCC Pin=p13-7
+Added Pin To Net: NetName=VCC Pin=p14-0
+Added Pin To Net: NetName=VCC Pin=p15-0
+Added Pin To Net: NetName=VCC Pin=p16-1
+Added Net: Name=VCC
+Added Class: Name=Sheet1
+Added Room: Name=Sheet1

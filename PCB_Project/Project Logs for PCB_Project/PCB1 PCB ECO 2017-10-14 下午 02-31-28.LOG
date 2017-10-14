@@ -1,0 +1,7 @@
+Added Component: Designator=p7(pin_18_2)
+Add component. Clean all parameters for all variants
+Added Pin To Net: NetName=n52 Pin=p7-0
+Added Pin To Net: NetName=n50 Pin=p7-1
+Added Pin To Net: NetName=n53 Pin=p7-18
+Added Pin To Net: NetName=n51 Pin=p7-19
+Added Member To Class: ClassName=Sheet1 Member=Component p7 pin_18_2

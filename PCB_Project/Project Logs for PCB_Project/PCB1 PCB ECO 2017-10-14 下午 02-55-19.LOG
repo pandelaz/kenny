@@ -1,0 +1,15 @@
+Added Component: Designator=p*?(pin_4)
+Add component. Clean all parameters for all variants
+Added Component: Designator=p*(pin_4)
+Add component. Clean all parameters for all variants
+Added Pin To Net: NetName=GND Pin=p*-0
+Added Pin To Net: NetName=N5 Pin=p*-1
+Added Pin To Net: NetName=N4 Pin=p*-2
+Added Pin To Net: NetName=N6 Pin=p*-3
+Added Pin To Net: NetName=GND Pin=p*?-0
+Added Pin To Net: NetName=VCC Pin=p*?-1
+Added Pin To Net: NetName=SDA Pin=p*?-2
+Added Pin To Net: NetName=SCL Pin=p*?-3
+Added Member To Class: ClassName=Sheet1 Member=Component p*? LCD
+Added Member To Class: ClassName=Sheet1 Member=Component p* RGB
+Added Room: Name=Sheet1

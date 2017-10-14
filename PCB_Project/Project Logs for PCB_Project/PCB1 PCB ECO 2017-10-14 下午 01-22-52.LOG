@@ -1,0 +1,11 @@
+Added Component: Designator=p14(PIN_2)
+Add component. Clean all parameters for all variants
+Added Component: Designator=p15(PIN_2)
+Add component. Clean all parameters for all variants
+Added Pin To Net: NetName=VCC Pin=p14-0
+Added Pin To Net: NetName=A0 Pin=p14-1
+Added Pin To Net: NetName=VCC Pin=p15-0
+Added Pin To Net: NetName=GND Pin=p15-1
+Added Member To Class: ClassName=Sheet1 Member=Component p14 pin_2
+Added Member To Class: ClassName=Sheet1 Member=Component p15 power
+Added Room: Name=Sheet1

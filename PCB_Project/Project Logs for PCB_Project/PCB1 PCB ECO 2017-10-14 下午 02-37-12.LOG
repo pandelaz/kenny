@@ -1,0 +1,4 @@
+Added Component: Designator=p3(pin_8_S)
+Add component. Clean all parameters for all variants
+Added Member To Class: ClassName=Sheet1 Member=Component p3 pin_8
+Added Room: Name=Sheet1
